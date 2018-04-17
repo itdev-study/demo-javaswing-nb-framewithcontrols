@@ -1,4 +1,5 @@
-// Demo singleframe
+// Demo singleframe with controls 
+
 package demo.javaswing.singleframe;
 
 import java.awt.event.*;

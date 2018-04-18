@@ -1,5 +1,4 @@
 // Demo singleframe with controls 
-
 package demo.javaswing.singleframe;
 
 import java.awt.event.*;
@@ -14,7 +13,8 @@ public class DemoJavaswingSingleframeButtonText {
 class ControlMainFrame implements ActionListener{
     JFrame mainFrame;
     JEditorPane editorPane;
-    JButton btn;    
+    JButton btn;  
+    JButton btn2;  
     
     ControlMainFrame(){
         mainFrame=new JFrame("Control");
@@ -23,13 +23,18 @@ class ControlMainFrame implements ActionListener{
         mainFrame.setLayout(null);   
         
         btn=new JButton("Print RRR in textarea");
-        btn.setBounds(10,10,180,30);
+        btn.setBounds(10,10,120,30);
         btn.addActionListener(this);
+        
+        btn2=new JButton("Print RRR2 in textarea");
+        btn2.setBounds(140,10,120,30);
+        btn2.addActionListener(this);
         
         editorPane = new JEditorPane();
         editorPane.setBounds(10, 45, 450, 250);
           
         mainFrame.add(btn);   
+        mainFrame.add(btn2);  
         mainFrame.add(editorPane);  
         mainFrame.setVisible(true);        
     }
@@ -37,5 +42,6 @@ class ControlMainFrame implements ActionListener{
         //System.exit(0);
         System.out.println("TEST"); 
         editorPane.setText("RRRR");
+       
     }
 }

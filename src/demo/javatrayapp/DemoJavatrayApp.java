@@ -1,5 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
+ * Example from  https://docs.oracle.com/javase/tutorial/uiswing/misc/systemtray.html
  */
 package demo.javatrayapp;
 
@@ -10,13 +10,19 @@ import java.awt.Toolkit;
 import java.awt.TrayIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import sun.tools.jar.Main;
 
-public class DemoJavatrayApp {
-  static Image image = Toolkit.getDefaultToolkit().getImage("tray.gif");
-
-  static TrayIcon trayIcon = new TrayIcon(image, "Tester2");
+public class DemoJavatrayApp {  
 
   public static void main(String[] a) throws Exception {
+    String workingDir = System.getProperty("user.dir"); 
+    System.out.println("Current working directory : " + workingDir);      
+    Image image = Toolkit.getDefaultToolkit().getImage(workingDir+"\\tray2.gif");
+    TrayIcon trayIcon = new TrayIcon(image, "Tray APP");        
+       
     if (SystemTray.isSupported()) {
       SystemTray tray = SystemTray.getSystemTray();
 
@@ -24,7 +30,7 @@ public class DemoJavatrayApp {
       trayIcon.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
           System.out.println("In here");
-          trayIcon.displayMessage("Tester!", "Some action performed", TrayIcon.MessageType.INFO);
+          trayIcon.displayMessage("Tester!", "TEST Message", TrayIcon.MessageType.INFO);
         }
       });
 

@@ -55,6 +55,7 @@ public class DemoJavatrayApp {
 
       trayIcon.setImageAutoSize(true);
       trayIcon.setPopupMenu(popup);
+      
       trayIcon.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
               System.out.println("In here");

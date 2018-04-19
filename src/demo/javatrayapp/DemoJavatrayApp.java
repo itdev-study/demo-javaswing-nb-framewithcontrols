@@ -1,5 +1,6 @@
 /*
  * Example from  https://docs.oracle.com/javase/tutorial/uiswing/misc/systemtray.html
+ * and  http://www.java2s.com/Tutorial/Java/0240__Swing/CreateTrayIcon.htm
  */
 package demo.javatrayapp;
 
